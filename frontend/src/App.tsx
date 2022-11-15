@@ -1,6 +1,11 @@
 import Header from "./components/Header";
 import SalesCard from "./components/SalesCard";
 
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import ptBR from "date-fns/locale/pt-BR";
+registerLocale("pt-BR", ptBR);
+setDefaultLocale("pt-BR");
+
 function App() {
   return (
     <>
