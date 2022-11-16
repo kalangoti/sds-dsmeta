@@ -3,10 +3,11 @@ import SalesCard from "./components/SalesCard";
 
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
-registerLocale("pt-BR", ptBR);
-setDefaultLocale("pt-BR");
 
 function App() {
+  registerLocale("pt-BR", ptBR);
+  setDefaultLocale("pt-BR");
+
   return (
     <>
       <Header />
