@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Sale } from "../../models/sale";
-import { BASE_URL } from "../../utils/resquest";
+import { BASE_URL } from "../../utils/request";
 import NotificationButton from "../NotificationButton";
 import "./styles.css";
 
@@ -75,7 +75,7 @@ function SalesCard() {
                   </td>
                   <td>
                     <div className="dsmeta-red-btn-container">
-                      <NotificationButton />
+                      <NotificationButton saleId={sale.id} />
                     </div>
                   </td>
                 </tr>
