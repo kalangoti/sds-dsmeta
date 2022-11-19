@@ -14,10 +14,15 @@ function SalesCard() {
   const [maxDate, setMaxDate] = useState(new Date());
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/sales`).then((response) => {
-      setSales(response.data.content);
-    });
-  }, []);
+    const minDateFormatted = minDate.toISOString().slice(0, 10);
+    const maxDateFormatted = maxDate.toISOString().slice(0, 10);
+
+    axios
+      .get(`${BASE_URL}/sales?minDate=${minDateFormatted}&maxDate=${maxDateFormatted}`)
+      .then((response) => {
+        setSales(response.data.content);
+      });
+  }, [minDate, maxDate]);
 
   const [sales, setSales] = useState<Sale[]>([]);
 
